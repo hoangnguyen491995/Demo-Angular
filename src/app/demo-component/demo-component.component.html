@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <title>Form login unitop.vn</title>
+</head>
+
+<body>
+  <p>demo-component works! {{title}}</p>
+  <div class="user-info">
+    <p>id: <span appHighlight>{{user.id}}</span></p>
+    <p>name: {{user.name}}  </p>
+    <p>age: {{user.age}}</p>
+    <p>classes: {{user.class}}</p>
+  </div>
+  <button (click)="increase()">Click me!</button>
+  <p>{{count}}</p>
+  <!-- <button (click)="onbuttonClicked()">child</button> -->
+
+  <div id="wrapper"> 
+    <form novalidate (ngSubmit)="onSubmit()" id="form-login">
+      <h1 class="form-heading">Form đăng ký</h1>
+      <div class="form-group">
+        <i class="far fa-user"></i>
+        <input type="text" class="form-input" placeholder="Email" [(ngModel)]="email" name="email"
+          [ngModelOptions]="{standalone: true}" required>
+      </div>
+      <div class="form-group">
+        <i class="far fa-user"></i>
+        <input type="text" class="form-input" placeholder="Số điện thoại" [(ngModel)]="phone" name="phone"
+          [ngModelOptions]="{standalone: true}" required  minlength="10" maxlength="11" >
+      </div>
+      <div class="form-group">
+        <i class="fas fa-key"></i>
+        <input type="password" class="form-input" placeholder="Mật khẩu" [(ngModel)]="password" name="password"
+          [ngModelOptions]="{standalone: true}" required minlength="6" >
+        <div id="eye">
+          <i class="far fa-eye"></i>
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="fas fa-key"></i>
+        <input type="password" class="form-input" placeholder="Nhập lại Mật khẩu" [(ngModel)]="password2" name="password2"
+          [ngModelOptions]="{standalone: true}" required minlength="6" >
+        <div id="eye">
+          <i class="far fa-eye"></i>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">Đăng ký</button>
+    </form>
+  </div>
+
+
+</body>
+</html>
+
+<h3>Check Variable Data</h3>
+<hr>
+<p>Email is : {{ email | uppercase }} </p>
+<p>Mật khẩu is : {{ password }}</p>
+<p>phone is : {{ phone }}</p>
+
+<div>
+  Input Value Child: {{ inputValue }}
+</div>

@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+// import { EmailValidatorDirectiveDirective } from './EmailValidatorDirective.directive';
+import { EmailValidatorDirective } from './EmailValidator.directive';
 
 const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+   declarations: [	
+    EmailValidatorDirective
+   ]
 })
 export class AppRoutingModule { }
